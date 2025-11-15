@@ -2,13 +2,7 @@ const mongoose = require('mongoose');
 
 
 const DoctorSchema = new mongoose.Schema({
-    userId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
-      required: true,
-      unique: true
-    },
-  
+
     title: {
       type: String,
       enum: ['Dr.', 'Prof.', 'MD', 'MBBS'],
@@ -65,19 +59,10 @@ const DoctorSchema = new mongoose.Schema({
       default: 0
     },
 
-  
-            availability: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'DoctorAvailability',
-                default: null  
-             },
-  
     isAcceptingPatients: {
       type: Boolean,
-      default: true
+      default: False
     },
-  
-  
 
   }, { timestamps: true });
   
